@@ -12,5 +12,8 @@ Lista de Temas Actuales:
 2. Constantes
 3. Switch y Match
 4. While y Do-While
-5. Break y Continue
+5. For y For-Each
+6. Break y Continue
+7. Algoritmos
+8. Funciones
 [Continuará...]
