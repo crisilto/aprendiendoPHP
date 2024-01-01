@@ -22,3 +22,11 @@ Este enfoque facilita el aprendizaje gradual y la comprensión de los conceptos 
  7. [Algoritmos](https://github.com/crisilto/aprendiendoPHP/blob/main/07algoritmos.php) ([teoría](https://github.com/crisilto/aprendiendoPHP/blob/main/07algoritmos.md))
  8. [Funciones](https://github.com/crisilto/aprendiendoPHP/blob/main/08funciones.php) ([teoría](https://github.com/crisilto/aprendiendoPHP/blob/main/08funciones.md))
  9. [Continuará...]
+
+**Ejercicios:**
+ 1. [Ejercicios Segundo de Desarrollo WEB (2º DAW)]
+(https://github.com/crisilto/aprendiendoPHP/tree/main/ejercicios)
+ 2. Ejercicios Píldoras Informáticas
+    2.1 [Hacer un registro]
+    (https://github.com/crisilto/registroPHP)
+ 3. Continuará...
