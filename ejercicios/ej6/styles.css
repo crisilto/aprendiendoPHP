@@ -1,0 +1,56 @@
+body {
+    font-family: monospace;
+    margin: 0px;
+    padding: 0px;
+    background-color: #ccc;
+}
+
+h1 {
+    color: #3498db;
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #555;
+    line-height: 1.5;
+    margin: 0px 30px;
+    text-align: justify;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+input[type="submit"],
+.volver {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+input[type="submit"]:hover,
+.volver:hover {
+    background-color: #2980b9;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
