@@ -1,10 +1,10 @@
 <?php
+$opcion_seleccionada = "todas"; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $opciones = ["politica", "economica", "deportiva"];
     if (isset($_POST["noticia"]) && in_array($_POST["noticia"], $opciones)) {
         $opcion_seleccionada = $_POST["noticia"];
-    } else {
-        $opcion_seleccionada = "todas";
     }
 }
 
@@ -13,6 +13,8 @@ $noticias = [
     "economica" => ["Noticia sobre economía 1", "Noticia sobre economía 2", "Noticia sobre economía 3"],
     "deportiva" => ["Noticia sobre deporte 1", "Noticia sobre deporte 2", "Noticia sobre deporte 3"],
 ];
+
+$titulares_mostrados = [];
 
 if ($opcion_seleccionada === "todas") {
     $titulares_mostrados = array_merge($noticias["politica"], $noticias['economica'], $noticias['deportiva']);
