@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coches>
+    <coche>
+        <matricula>3849HGF</matricula>
+        <marca>Nissan</marca>
+        <modelo>Juke 1.4</modelo>
+        <precio>14575.20</precio>
+    </coche>
+    <coche>
+        <matricula>9022JHM</matricula>
+        <marca>Ford</marca>
+        <modelo>Kuga 1.5</modelo>
+        <precio>19050.50</precio>
+    </coche>
+</coches>
