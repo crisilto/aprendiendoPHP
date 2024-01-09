@@ -88,9 +88,9 @@
             if ($archivoEliminar !== null) {
                 try {
                     if (file_exists($archivoEliminar)) {
-                        // Verificar que el archivo exista
+                        //Verificamos que el archivo existe
 
-                        // Intentar eliminar el archivo
+                        //Intentamos eliminar el archivo
                         if (unlink($archivoEliminar)) {
                             echo "<p>· Eliminación exitosa del archivo.</p>";
                         } else {

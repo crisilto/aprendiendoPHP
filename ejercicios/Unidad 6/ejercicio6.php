@@ -87,7 +87,7 @@
 
             if ($directorio !== null) {
                 try {
-                    // Obtener la lista de archivos TXT en el directorio
+                    //Obtenemos la lista de archivos TXT en el directorio
                     $archivosTXT = glob($directorio . '/*.txt');
 
                     if (!empty($archivosTXT)) {

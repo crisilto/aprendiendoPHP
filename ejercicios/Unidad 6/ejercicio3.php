@@ -89,16 +89,16 @@
             if ($archivoOriginal !== null && $nuevoNombre !== null) {
                 try {
                     if (file_exists($archivoOriginal)) {
-                        // Verificar que el archivo original exista
+                        //Verificamos que el archivo original existe
 
-                        // Construir la ruta para el nuevo nombre
+                        //Construimos la ruta para el nuevo nombre
                         $rutaNueva = pathinfo($archivoOriginal)['dirname'] . '/' . $nuevoNombre;
 
-                        // Verificar si ya existe un archivo con el nuevo nombre
+                        //Verificamos si ya existe un archivo con el nuevo nombre
                         if (file_exists($rutaNueva)) {
                             echo "<p>· Ya existe un archivo con el nuevo nombre.</p>";
                         } else {
-                            // Intentar realizar el cambio de nombre
+                            //Realizamos el cambio de nombre
                             if (rename($archivoOriginal, $rutaNueva)) {
                                 echo "<p>· Cambio de nombre exitoso del archivo.</p>";
                             } else {

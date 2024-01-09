@@ -89,9 +89,9 @@
             if ($archivoPermisos !== null && $permisos !== null) {
                 try {
                     if (file_exists($archivoPermisos)) {
-                        // Verificar que el archivo exista
+                        //Verificamos que el archivo existe
 
-                        // Intentar establecer los permisos
+                        //Intentamos establecer los permisos
                         if (chmod($archivoPermisos, octdec($permisos))) {
                             echo "<p>· Permisos establecidos con éxito.</p>";
                         } else {
