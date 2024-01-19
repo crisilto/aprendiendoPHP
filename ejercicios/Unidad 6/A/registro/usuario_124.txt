@@ -1,0 +1,11 @@
+Id. Usuario: 124
+Nombre: Luis
+Apellidos: Pla Romero
+Fecha de Nacimiento: 1989-12-13
+Teléfono: 62222222
+Sexo: Hombre
+Correo: luis@gmail.com
+Población: Burjassot
+País: España
+Usuario: luispr
+Contraseña: sdsd
