@@ -27,18 +27,30 @@
         ],
     ];
 
-    //Obtenemos el código de la película de la URL
-    $codigo = isset($_GET['codigo']) ? (int)$_GET['codigo'] : 0;
+    //Obtenemos los parámetros de búsqueda de la URL
+    $parametros = $_GET;
 
-    //Buscamos la película por código
-    $resultado = array_filter($peliculas, function($pelicula) use ($codigo) {
-        return $pelicula['codigo'] === $codigo;
-    });
+    //Inicializamos el resultado con un array vacío
+    $resultado = [];
+
+    //Recorremos las películas y comparamos los parámetros con los valores de las películas
+    foreach ($peliculas as $pelicula) {
+        $coincide = true;
+        foreach ($parametros as $parametro => $valor) {
+            if(strtolower($pelicula[$parametro]) !== strtolower($valor)){
+                $coincide = false;
+                break;
+            }
+        }
+        if($coincide){
+            $resultado[] = $pelicula;
+        }
+    }
 
     //Si se encuentra la película, devolvemos los datos en JSON
     if (!empty($resultado)) {
         header('Content-Type: application/json');
-        echo json_encode(array_values($resultado)[0], JSON_UNESCAPED_UNICODE);
+        echo json_encode($resultado, JSON_UNESCAPED_UNICODE);
     } else {
         //Si no, devolvemos un mensaje de error
         http_response_code(404);
