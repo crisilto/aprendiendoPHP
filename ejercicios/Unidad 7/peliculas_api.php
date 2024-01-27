@@ -38,10 +38,10 @@
     //Si se encuentra la película, devolvemos los datos en JSON
     if (!empty($resultado)) {
         header('Content-Type: application/json');
-        echo json_encode(array_values($resultado)[0]);
+        echo json_encode(array_values($resultado)[0], JSON_UNESCAPED_UNICODE);
     } else {
         //Si no, devolvemos un mensaje de error
         http_response_code(404);
-        echo json_encode(['error' => 'Película no encontrada']);
+        echo json_encode(['error' => 'Película no encontrada'], JSON_UNESCAPED_UNICODE);
     }
 ?>
