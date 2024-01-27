@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulario Red de Ordenadores</h1>
+    <form action="procesar_formulario.php" method="post">
+        <label for="routerIP">Dirección IP del Router:</label>
+        <input type="text" id="routerIP" name="routerIP" required><br><br>
+
+        <label for="numEquipos">Número de Equipos en la Red:</label>
+        <input type="number" id="numEquipos" name="numEquipos" required><br><br>
+
+        <label for="ipPrivada">IP Privada:</label>
+        <input type="checkbox" id="ipPrivada" name="ipPrivada"><br><br>
+
+        <label for="correoAdmin">Correo del Administrador:</label>
+        <input type="email" id="correoAdmin" name="correoAdmin" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
