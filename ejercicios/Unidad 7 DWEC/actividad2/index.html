@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 7 - Ejercicio 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+        function calcularDistancia(lat1, lon1, lat2, lon2) {
+            var dLat = (lat2 - lat1) * Math.PI / 180;
+            var dLon = (lon2 - lon1) * Math.PI / 180;
+            var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return 6371 * c * 1000; //Para retornar la distancia en metros
+        }
+        function verificarUbicacion() {
+            //Posición de Aula Campus
+            var latAulaCampus = 39.5113918;
+            var lonAulaCampus = -0.4182201;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var distancia = calcularDistancia(latAulaCampus, lonAulaCampus, position.coords.latitude, position.coords.longitude);
+                    var mensajeDiv = document.getElementById("mensaje");
+                    if (distancia <= 50) {
+                        mensajeDiv.innerHTML = "Estás a menos de 50 metros del Aula Campus";
+                        mensajeDiv.className = "cerca";
+                    } else {
+                        mensajeDiv.innerHTML = "Estás a más de 50 metros del Aula Campus";
+                        mensajeDiv.className = "lejos";
+                    }
+                }, function(error) {
+                    document.getElementById("mensaje").innerHTML = "Error al obtener la ubicación: " + error.message;
+                });
+            } else {
+                document.getElementById("mensaje").innerHTML = "La geolocalización no está disponible en tu navegador.";
+            }
+        }
+    </script>
+</head>
+<body onload="verificarUbicacion();">
+    <h1>Comprobación de Distancia al Aula Campus</h1>
+    <div id="mensaje"></div>
+</body>
+</html>
