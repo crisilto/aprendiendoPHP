@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 7 - Actividad 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+
+        //Creamos el objeto XMLHttpRequest que permite la comunicación asíncrona con el servidor
+        var peticion = new XMLHttpRequest();
+
+        function compruebaCorreo() {
+            //Cada vez que cambia el estado del objeto XMLHttpRequest se ejecuta la función de callback
+            peticion.onreadystatechange = function () {
+                //Si 4 Comunicación completada y 200 comunicación OK
+                //Devuelve el resultado que se almacena en la propiedad responseText del objeto
+                if (peticion.readyState == 4 && peticion.status == 200) {
+                    document.getElementById("resultado").innerHTML = peticion.responseText;
+                }
+            };
+
+            //Configura la conexión asíncrona con una URL
+            peticion.open("POST", "comprueba.php", true);
+            peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            //Realiza la conexión con la URL
+            var correo = "correo=" + encodeURIComponent(document.getElementById("correo").value);
+            peticion.send(correo);
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="correo">Introduce tu correo electrónico:</label><br>
+        <input type="text" id="correo" onkeyup="compruebaCorreo();">
+        <div id="resultado"></div>
+    </form>
+</body>
+
+</html>
